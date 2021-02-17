@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import TodoContextProvider from './contexts/TodoContext';
+import TodoContextProvider from './contexts/TodoContext';
 
 import Navbar from './components/Navbar';
 // import Home from './pages/Home';
@@ -10,14 +10,14 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        {/* <TodoContextProvider>
-          <Route exact path="/">
+        <TodoContextProvider>
+          {/* <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/about">
             <About />
-          </Route>
-        </TodoContextProvider> */}
+          </Route> */}
+        </TodoContextProvider>
       </Router>
     </div>
   );
