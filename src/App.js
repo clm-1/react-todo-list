@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import TodoContextProvider from './contexts/TodoContext';
 
 import Navbar from './components/Navbar';
-// import Home from './pages/Home';
+import Home from './pages/Home';
 // import About from './pages/About';
 
 function App() {
@@ -11,10 +11,10 @@ function App() {
       <Router>
         <Navbar />
         <TodoContextProvider>
-          {/* <Route exact path="/">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/about">
+          {/* <Route exact path="/about">
             <About />
           </Route> */}
         </TodoContextProvider>
