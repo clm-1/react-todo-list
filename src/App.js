@@ -1,4 +1,4 @@
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import TodoContextProvider from './contexts/TodoContext';
 
 import Navbar from './components/Navbar';
@@ -8,17 +8,17 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div className="App">
-      {/* <Router>
-        <TodoContextProvider>
-          <Navbar />
+      <Router>
+        <Navbar />
+        {/* <TodoContextProvider>
           <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/about">
             <About />
           </Route>
-        </TodoContextProvider>
-      </Router> */}
+        </TodoContextProvider> */}
+      </Router>
     </div>
   );
 }
