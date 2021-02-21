@@ -3,7 +3,7 @@ import TodoContextProvider from './contexts/TodoContext';
 
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-// import About from './pages/About';
+import About from './pages/About';
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          {/* <Route exact path="/about">
+          <Route exact path="/about">
             <About />
-          </Route> */}
+          </Route>
         </TodoContextProvider>
       </Router>
     </div>
