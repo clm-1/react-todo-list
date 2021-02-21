@@ -39,13 +39,13 @@ const Todo = ({ todo }) => {
         <div className={style.textWrapper} onClick={() => completedHandler(todo)}>
           {todo.text}
         </div>
-        <div onClick={() => handleMove(todo, -1)} className={`${style.moveBtns}`}>U</div>
-        <div onClick={() => handleMove(todo, 1)} className={`${style.moveBtns}`}>D</div>
-        <div className={style.edit} onClick={handleEditInfo}>
-          <span>E</span>
+        <div onClick={() => handleMove(todo, -1)} className={`${style.moveBtns}`}><i className="fas fa-chevron-up"></i></div>
+        <div onClick={() => handleMove(todo, 1)} className={`${style.moveBtns}`}><i className="fas fa-chevron-down"></i></div>
+        <div className={`${style.edit} ${edit ? style.editBtnActive : ''}`} onClick={handleEditInfo}>
+        <i className="fas fa-pencil-alt"></i>
         </div>
         <div className={style.delete} onClick={() => removeTodo(todo)}>
-          <span>X</span>
+          <i className="fas fa-trash-alt"></i>
         </div>
       </div>
 

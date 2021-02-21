@@ -22,6 +22,10 @@
   font-size: .9rem;
 }
 
+.editBtnActive {
+  background-color: rgb(129, 122, 138);
+}
+
 .textWrapper {
   flex: 1;
   font-size: .9rem;
@@ -38,10 +42,22 @@
   align-items: center;
 }
 
-.moveBtns:active,
+.moveBtns:active {
+  background-color: rgb(170, 170, 170);
+}
+
 .delete:active,
 .edit:active {
-  background-color: grey;
+  background-color: rgb(129, 122, 138);
+}
+
+i {
+  font-size: .9rem;
+}
+
+.moveBtns i {
+  font-size: .6rem;
+  color: #333;
 }
 
 .completed {
@@ -68,6 +84,7 @@
   flex: 1;
   padding-left: .5rem;
   border: 1px solid #bbb;
+  font-family: monospace;
 }
 
 .form > input[type="submit"] {
