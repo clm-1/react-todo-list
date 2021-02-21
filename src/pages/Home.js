@@ -1,11 +1,11 @@
 import NewTodoForm from '../components/NewTodoForm';
-// import TodoList from '../components/TodoList';
+import TodoList from '../components/TodoList';
 
 const Home = () => {
   return ( 
     <div>
       <NewTodoForm />
-      {/* <TodoList /> */}
+      <TodoList />
     </div>
    );
 }
