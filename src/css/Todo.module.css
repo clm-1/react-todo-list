@@ -44,6 +44,11 @@
   background-color: grey;
 }
 
+.moveBtns i {
+  font-size: .6rem;
+  color: #333;
+}
+
 .completed {
   opacity: .5;
 }
