@@ -1,0 +1,90 @@
+.todoWrapper {
+  margin: .3rem auto;
+}
+
+.todoItem {
+  display: flex;
+  background-color: rgb(231, 226, 222);
+  justify-content: space-between;
+  min-height: 45px;
+  cursor: pointer;
+}
+
+.delete, .edit {
+  background-color: rgb(145, 138, 153);
+  display: flex;
+  justify-content: center;
+  color: #eee;
+  width: 35px;
+  align-items: center;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: .9rem;
+}
+
+.textWrapper {
+  flex: 1;
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  padding: .3rem .6rem;
+}
+
+.moveBtns {
+  background-color: rgb(202, 202, 202);
+  display: flex;
+  width: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.moveBtns:active,
+.delete:active,
+.edit:active {
+  background-color: grey;
+}
+
+.completed {
+  opacity: .5;
+}
+
+.completed > div:nth-child(1) {
+  text-decoration: line-through;
+}
+
+.moved {
+  background-color: rgb(219, 219, 219);
+}
+
+.form {
+  display: flex;
+  height: 35px;
+  margin-top: .2rem;
+  margin-bottom: .6rem;
+  background-color: slategray;
+}
+
+.form > input[type="text"] {
+  flex: 1;
+  padding-left: .5rem;
+  border: 1px solid #bbb;
+}
+
+.form > input[type="submit"] {
+  width: 105px;
+  border: none;
+  color: #eee;
+  background-color: rgb(145, 138, 153);
+}
+
+.form > input[type="text"]:focus {
+  outline: none;
+}
+
+.editTodo {
+  display: none;
+}
+
+.editTodo.editNow {
+  display: initial;
+}
