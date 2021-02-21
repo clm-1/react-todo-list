@@ -6,8 +6,12 @@
   display: flex;
   background-color: rgb(231, 226, 222);
   justify-content: space-between;
-  min-height: 45px;
+  min-height: 65px;
   cursor: pointer;
+}
+
+.btnWrapper {
+  display: flex;
 }
 
 .delete, .edit {
@@ -15,7 +19,7 @@
   display: flex;
   justify-content: center;
   color: #eee;
-  width: 35px;
+  width: 30px;
   align-items: center;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -34,10 +38,16 @@
   padding: .3rem .6rem;
 }
 
+.moveWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .moveBtns {
   background-color: rgb(202, 202, 202);
+  width: 30px;
+  height: 50%;
   display: flex;
-  width: 35px;
   justify-content: center;
   align-items: center;
 }
@@ -52,12 +62,12 @@
 }
 
 i {
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 .moveBtns i {
   font-size: .6rem;
-  color: #333;
+  color: #444;
 }
 
 .completed {
@@ -78,18 +88,19 @@ i {
   margin-top: .2rem;
   margin-bottom: .6rem;
   background-color: slategray;
+  width: 100%;
 }
 
 .form > input[type="text"] {
-  flex: 1;
+  width: 85%;
   padding-left: .5rem;
   border: 1px solid #bbb;
   font-family: monospace;
 }
 
 .form > input[type="submit"] {
-  width: 105px;
   border: none;
+  width: 15%;
   color: #eee;
   background-color: rgb(145, 138, 153);
 }
@@ -104,4 +115,42 @@ i {
 
 .editTodo.editNow {
   display: initial;
+}
+
+@media screen and (min-width: 400px) {
+  .delete, .edit {
+    width: 35px;
+  }
+
+  i {
+    font-size: .9rem;
+  }
+
+  .form > input[type="text"] {
+    width: 90%;
+  }
+
+  .form > input[type="submit"] {
+    width: 10%;
+    font-size: .8rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .moveWrapper {
+    flex-direction: row;
+    order: -1;
+  }
+
+  .todoItem {
+    min-height: 45px;
+  }
+  
+  .moveBtns {
+    width: 35px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
