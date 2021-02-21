@@ -41,7 +41,7 @@ const Todo = ({ todo }) => {
         </div>
         <div onClick={() => handleMove(todo, -1)} className={`${style.moveBtns}`}><i className="fas fa-chevron-up"></i></div>
         <div onClick={() => handleMove(todo, 1)} className={`${style.moveBtns}`}><i className="fas fa-chevron-down"></i></div>
-        <div className={style.edit} onClick={handleEditInfo}>
+        <div className={`${style.edit} ${edit ? style.editBtnActive : ''}`} onClick={handleEditInfo}>
         <i className="fas fa-pencil-alt"></i>
         </div>
         <div className={style.delete} onClick={() => removeTodo(todo)}>
