@@ -10,9 +10,14 @@ body {
 }
 
 .App {
-  margin: 1rem auto;
   padding: 1rem;
   max-width: 600px;
-  box-shadow: 1px 1px 15px rgb(184, 184, 184);
   min-height: 500px;
 }
+
+@media screen and (min-width: 500px) {
+  .App {
+    margin: 1rem auto;
+    box-shadow: 1px 1px 15px rgb(184, 184, 184);
+  }
+} 
