@@ -11,9 +11,11 @@ const InfoBar = () => {
 
   return ( 
     <div className={style.infoBarWrapper}>
-      <span className={style.day}>{day}</span>
-      <span>{ createTimestamp()[0] }</span>
-      <span className={style.infoText}>You have {`${todos.length} ${thing}`} to do</span>
+      <div className={style.timeWrapper}>
+        <span className={style.day}>{day}</span>
+        <span className={style.timeStamp}>{ createTimestamp()[0] }</span>
+      </div>
+      <span className={style.infoText}>You have <strong>{todos.length}</strong> {thing} to do</span>
     </div>
    );
 }
