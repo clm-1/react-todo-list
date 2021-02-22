@@ -4,6 +4,7 @@ import TodoContextProvider from './contexts/TodoContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
+import InfoBar from './components/InfoBar';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Navbar />
         <TodoContextProvider>
+          <InfoBar />
           <Route exact path="/">
             <Home />
           </Route>
