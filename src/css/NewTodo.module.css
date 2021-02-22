@@ -19,6 +19,11 @@
   background-color: rgb(145, 138, 153);
 }
 
+.form > input[type="submit"]:active {
+  outline: none;
+  background-color: rgb(129, 122, 138);
+}
+
 .form > input[type="text"]:focus {
   outline: none;
 }
