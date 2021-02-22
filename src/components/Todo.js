@@ -5,6 +5,7 @@ import style from '../css/Todo.module.css';
 const Todo = ({ todo }) => {
   const { removeTodo, completedHandler, moveTodo, editTodo } = useContext(TodoContext);
   const [moved, setMoved] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
   const [edit, setEdit] = useState(false);
   const [updateValue, setUpdateValue] = useState('');
 
@@ -40,8 +41,15 @@ const Todo = ({ todo }) => {
     completedHandler(todo)
   }
 
+  const handleRemove = () => {
+    setAnimateOut(true);
+    setTimeout(() => {
+      removeTodo(todo)
+    }, 200)
+  }
+
   return ( 
-    <div className={style.todoWrapper}>
+    <div className={`${style.todoWrapper} ${animateOut ? style.animateOut : ''}`}>
       <div className={`${style.todoItem} ${todo.completed ? style.completed : ''} ${moved ? style.moved : ''}`}>
         <div className={style.textWrapper} onClick={handleDone}>
           <p className={style.timeStamp}>{`${todo.time[0]} ${todo.time[1]}`}</p>
@@ -51,7 +59,7 @@ const Todo = ({ todo }) => {
             <div className={`${style.edit} ${edit ? style.editBtnActive : ''}`} onClick={handleEditInfo}>
             <i className="fas fa-pencil-alt"></i>
             </div>
-            <div className={style.delete} onClick={() => removeTodo(todo)}>
+            <div className={style.delete} onClick={handleRemove}>
               <i className="fas fa-trash-alt"></i>
             </div>
             <div className={style.moveWrapper}>
