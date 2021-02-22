@@ -2,6 +2,12 @@
   margin: .3rem auto;
 }
 
+.todoWrapper.animateOut {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: .2s;
+}
+
 .todoItem {
   display: flex;
   background-color: rgb(231, 226, 222);
