@@ -38,10 +38,25 @@ const TodoContextProvider = (props) => {
     let tempTodos = [...todos];
     let index = tempTodos.indexOf(todoToChange);
     tempTodos[index].completed = !tempTodos[index].completed;
-
+    
     if (tempTodos[index].completed) {
       let todoToMove = tempTodos.splice(index, 1);
       tempTodos.push(...todoToMove);
+    } else if (!tempTodos[index].completed) {
+      console.log('uncomplete');
+      let todoToMove = tempTodos.splice(index, 1);
+      let insertIndex = null;
+      for (let i = 0; i < tempTodos.length; i++) {
+        if (tempTodos[i].completed) {
+          insertIndex = i;
+          break;
+        }
+      }
+      if (insertIndex !== null) {
+        tempTodos.splice(insertIndex, 0, ...todoToMove);
+      } else {
+        tempTodos.push(...todoToMove);
+      }
     }
 
     setTodos(tempTodos);
