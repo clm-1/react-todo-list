@@ -34,8 +34,22 @@
   flex: 1;
   font-size: .9rem;
   display: flex;
-  align-items: center;
-  padding: .3rem .6rem;
+  flex-direction: column;
+  padding: .2rem .6rem;
+}
+
+.todoText, .timeStamp {
+  margin: 0;
+}
+
+.timeStamp {
+  font-size: .7rem;
+  color: #999;
+}
+
+.todoText {
+  margin-top: -.3rem;
+  font-size: .9rem;
 }
 
 .moveWrapper {

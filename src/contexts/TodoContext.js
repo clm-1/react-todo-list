@@ -13,10 +13,15 @@ const TodoContextProvider = (props) => {
   }, [todos]);
 
   const addTodo = (todoText) => {
+    const timestamp = new Date();
+    const date = timestamp.toLocaleDateString('sv-SE');
+    const time = timestamp.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit'});
+
     const newTodo = {
       text: todoText,
       completed: false,
       id: Math.random() * 1000,
+      time: `${date} ${time}`,
     }
     setTodos([newTodo, ...todos]);
   }
@@ -43,7 +48,6 @@ const TodoContextProvider = (props) => {
       let todoToMove = tempTodos.splice(index, 1);
       tempTodos.push(...todoToMove);
     } else if (!tempTodos[index].completed) {
-      console.log('uncomplete');
       let todoToMove = tempTodos.splice(index, 1);
       let insertIndex = null;
       for (let i = 0; i < tempTodos.length; i++) {
