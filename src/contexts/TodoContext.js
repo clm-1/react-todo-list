@@ -55,7 +55,7 @@ const TodoContextProvider = (props) => {
   const moveTodo = (todo, dir) => {
     let tempTodos = [...todos];
     let index = todos.indexOf(todo);
-    if (dir === -1 && index !== 0 || dir === 1 && index !== tempTodos.length - 1) {
+    if (dir === -1 && index !== 0 || dir === 1 && index !== tempTodos.length - 1 && !todos[index + 1].completed) {
       let todoToMove = tempTodos.splice(index, 1);
       tempTodos.splice(index + dir, 0, ...todoToMove);
       setTodos(tempTodos); 
