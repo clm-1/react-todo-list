@@ -18,7 +18,7 @@ const TodoContextProvider = (props) => {
       completed: false,
       id: Math.random() * 1000,
     }
-    setTodos([...todos, newTodo]);
+    setTodos([newTodo, ...todos]);
   }
 
   const removeTodo = (todoToRemove) => {
@@ -38,10 +38,12 @@ const TodoContextProvider = (props) => {
     let tempTodos = [...todos];
     let index = tempTodos.indexOf(todoToChange);
     tempTodos[index].completed = !tempTodos[index].completed;
+
     if (tempTodos[index].completed) {
       let todoToMove = tempTodos.splice(index, 1);
       tempTodos.push(...todoToMove);
     }
+
     setTodos(tempTodos);
 
     // setTodos(todos.map(todo => {
