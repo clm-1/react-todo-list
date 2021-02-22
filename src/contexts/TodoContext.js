@@ -7,6 +7,7 @@ const TodoContextProvider = (props) => {
     const storedTodos = localStorage.getItem('todos');
     return storedTodos ? JSON.parse(storedTodos) : [];
   });
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
