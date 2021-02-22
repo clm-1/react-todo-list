@@ -44,7 +44,7 @@ const Todo = ({ todo }) => {
     <div className={style.todoWrapper}>
       <div className={`${style.todoItem} ${todo.completed ? style.completed : ''} ${moved ? style.moved : ''}`}>
         <div className={style.textWrapper} onClick={handleDone}>
-          <p className={style.timeStamp}>{todo.time}</p>
+          <p className={style.timeStamp}>{`${todo.time[0]} ${todo.time[1]}`}</p>
           <p className={style.todoText}>{todo.text}</p>
         </div>
           <div className={style.btnWrapper}>

@@ -12,16 +12,19 @@ const TodoContextProvider = (props) => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
-  const addTodo = (todoText) => {
+  const createTimestamp = () => {
     const timestamp = new Date();
     const date = timestamp.toLocaleDateString('sv-SE');
     const time = timestamp.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit'});
+    return [date, time];
+  }
 
+  const addTodo = (todoText) => {
     const newTodo = {
       text: todoText,
       completed: false,
       id: Math.random() * 1000,
-      time: `${date} ${time}`,
+      time: createTimestamp(),
     }
     setTodos([newTodo, ...todos]);
   }
@@ -91,6 +94,7 @@ const TodoContextProvider = (props) => {
     completedHandler,
     moveTodo,
     editTodo,
+    createTimestamp,
   }
 
   return ( 
