@@ -21,6 +21,7 @@ const NewTodoForm = () => {
       <input  type="text" 
               onChange={todoTextHandler} 
               value={todoText} 
+              required 
               name="description"/>
       <input type="submit" value="ADD"/>
     </form>
