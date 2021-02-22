@@ -23,7 +23,9 @@ const Todo = ({ todo }) => {
   }
 
   const handleEditInfo = () => {
-    setEdit(!edit);
+    if (!todo.completed) {
+      setEdit(!edit);
+    }
     setUpdateValue(todo.text);
   }
 
@@ -33,10 +35,15 @@ const Todo = ({ todo }) => {
     setEdit(false);
   }
 
+  const handleDone = () => {
+    setEdit(false);
+    completedHandler(todo)
+  }
+
   return ( 
     <div className={style.todoWrapper}>
       <div className={`${style.todoItem} ${todo.completed ? style.completed : ''} ${moved ? style.moved : ''}`}>
-        <div className={style.textWrapper} onClick={() => completedHandler(todo)}>
+        <div className={style.textWrapper} onClick={handleDone}>
           {todo.text}
         </div>
           <div className={style.btnWrapper}>
