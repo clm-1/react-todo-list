@@ -1,22 +1,48 @@
 .form {
   display: flex;
-  height: 35px;
+  flex-direction: column;
   margin-bottom: 1.5rem;
 }
 
 .form > input[type="text"] {
   flex: 1;
+  padding: .6rem;
   padding-left: .5rem;
   border: 1px solid #bbb;
 }
 
 .form > input[type="submit"] {
-  width: 105px;
   border: none;
+  margin-top: .3rem;
+  padding: .6rem;
   color: #eee;
   background-color: rgb(145, 138, 153);
 }
 
 .form > input[type="text"]:focus {
   outline: none;
+}
+
+@media screen and (min-width: 400px) {
+  .form {
+    display: flex;
+    flex-direction: initial;
+    height: 35px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form > input[type="text"] {
+    flex: 1;
+    height: initial;
+    padding-left: .5rem;
+    border: 1px solid #bbb;
+  }
+  
+  .form > input[type="submit"] {
+    width: 105px;
+    border: none;
+    margin: 0;
+    color: #eee;
+    background-color: rgb(145, 138, 153);
+  }
 }
