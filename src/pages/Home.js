@@ -3,7 +3,7 @@ import TodoList from '../components/TodoList';
 
 const Home = () => {
   return ( 
-    <div>
+    <div className="home fade-in">
       <NewTodoForm />
       <TodoList />
     </div>

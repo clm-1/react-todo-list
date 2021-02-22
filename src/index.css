@@ -17,6 +17,24 @@ body {
   min-height: 100vh;
 }
 
+.home {
+  position: relative;
+}
+
+.about {
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; top: 20px;}
+  to {opacity: 1; top: 0;}
+}
+
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: .5s;
+}
+
 @media screen and (min-width: 500px) {
   body {
     padding: 0 1rem;
@@ -28,3 +46,4 @@ body {
     min-height: 500px;
   }
 } 
+

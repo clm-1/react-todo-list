@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
         <TodoContextProvider>
+          <Navbar />
           <InfoBar />
           <Route exact path="/">
             <Home />
