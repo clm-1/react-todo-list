@@ -12,13 +12,21 @@ const TodoContextProvider = (props) => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
+  const createTimestamp = () => {
+    const timestamp = new Date();
+    const date = timestamp.toLocaleDateString('sv-SE');
+    const time = timestamp.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit'});
+    return [date, time];
+  }
+
   const addTodo = (todoText) => {
     const newTodo = {
       text: todoText,
       completed: false,
       id: Math.random() * 1000,
+      time: createTimestamp(),
     }
-    setTodos([...todos, newTodo]);
+    setTodos([newTodo, ...todos]);
   }
 
   const removeTodo = (todoToRemove) => {
@@ -38,10 +46,26 @@ const TodoContextProvider = (props) => {
     let tempTodos = [...todos];
     let index = tempTodos.indexOf(todoToChange);
     tempTodos[index].completed = !tempTodos[index].completed;
+    
     if (tempTodos[index].completed) {
       let todoToMove = tempTodos.splice(index, 1);
       tempTodos.push(...todoToMove);
+    } else if (!tempTodos[index].completed) {
+      let todoToMove = tempTodos.splice(index, 1);
+      let insertIndex = null;
+      for (let i = 0; i < tempTodos.length; i++) {
+        if (tempTodos[i].completed) {
+          insertIndex = i;
+          break;
+        }
+      }
+      if (insertIndex !== null) {
+        tempTodos.splice(insertIndex, 0, ...todoToMove);
+      } else {
+        tempTodos.push(...todoToMove);
+      }
     }
+
     setTodos(tempTodos);
 
     // setTodos(todos.map(todo => {
@@ -55,7 +79,7 @@ const TodoContextProvider = (props) => {
   const moveTodo = (todo, dir) => {
     let tempTodos = [...todos];
     let index = todos.indexOf(todo);
-    if (dir === -1 && index !== 0 || dir === 1 && index !== tempTodos.length - 1) {
+    if (dir === -1 && index !== 0 || dir === 1 && index !== tempTodos.length - 1 && !todos[index + 1].completed) {
       let todoToMove = tempTodos.splice(index, 1);
       tempTodos.splice(index + dir, 0, ...todoToMove);
       setTodos(tempTodos); 
@@ -70,6 +94,7 @@ const TodoContextProvider = (props) => {
     completedHandler,
     moveTodo,
     editTodo,
+    createTimestamp,
   }
 
   return ( 
