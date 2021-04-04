@@ -1,0 +1,20 @@
+p {
+  color: rgb(110, 110, 110);
+  font-size: .8rem;
+  text-align: justify;
+  margin-top: 1rem;
+  padding: .2rem .2rem;
+}
+
+.aboutText {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  margin-top: 7rem;
+  background-color: rgb(202, 202, 202);
+  font-family: monospace;
+}
